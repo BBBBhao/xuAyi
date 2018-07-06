@@ -16,6 +16,7 @@ class IndexController extends Controller
      */
     public function index()
     {
+        // echo "46466"
         return view('admin.index.index');
     }
 
