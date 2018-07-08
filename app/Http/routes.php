@@ -10,13 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-<<<<<<< HEAD
-=======
-Route::get('/', function () {
-	echo 'BBBBhao';
-    return view('welcome');
-});
->>>>>>> origin/dwz
 
 
 
@@ -100,7 +93,8 @@ Route::get('/', function () {
 
 
 
-<<<<<<< HEAD
+
+
 
 
 
@@ -216,7 +210,7 @@ Route::get('/personalcenter','Home\HomepageController@personalcenter');
 
 
 
-=======
+
 Route::resource('/admin','Admin\IndexController');
->>>>>>> origin/dwz
+
 
