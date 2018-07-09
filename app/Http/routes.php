@@ -10,10 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', function () {
-	echo 'BBBBhao';
-    return view('welcome');
-});
 
 
 
@@ -89,6 +85,124 @@ Route::get('/', function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::resource('/','Home\HomepageController');
+Route::get('/register','Home\HomepageController@register');
+Route::get('/personalcenter','Home\HomepageController@personalcenter');
 
 
 
@@ -98,4 +212,5 @@ Route::get('/', function () {
 
 
 Route::resource('/admin','Admin\IndexController');
+
 

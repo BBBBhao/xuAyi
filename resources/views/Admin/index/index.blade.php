@@ -32,7 +32,7 @@
 <link rel="stylesheet" type="text/css" href="/Admin_/css/mws-theme.css" media="screen">
 <link rel="stylesheet" type="text/css" href="/Admin_/css/themer.css" media="screen">
 
-<title>MWS Admin - Form Layouts</title>
+<title>xuAyiDe Admin - Form auntXu</title>
 
 </head>
 
@@ -149,14 +149,20 @@
                 </form>
             </div>
             
-            <!-- Main Navigation -->
+            <!-- 分类注视 -->
             <div id="mws-navigation">
                 <ul>
                     <li class="active">
-                        <a href="#"><i class="icon-list"></i>分类管理</a>
+
+                        <a href="#"><i class="icon-list"></i>用户管理</a>
+                        <a href="#"><i class="icon-list"></i>商品管理</a>
+                        <a href="#"><i class="icon-list"></i>订单管理</a>
+                        <a href="#"><i class="icon-list"></i>轮播图管理</a>
+                        <a href="#"><i class="icon-list"></i>友情链接管理</a>
+                        <a href="#"><i class="icon-list"></i>网站配置管理</a>
+
                         <ul>
-                            <li><a href="form_layouts.html">添加分类</a></li>
-                            <li><a href="form_elements.html">查看分类</a></li>
+                        
                         </ul>
                     </li>
                 </ul>
