@@ -14,6 +14,17 @@
 
 
 
+// 后台首页路由
+Route::get('/admin','Admin\IndexController@index');
+
+// 后台用户管理路由
+Route::resource('/admin/user','Admin\UserController');
+
+// 后台分类管理路由
+Route::resource('/admin/cates','Admin\CatesController');
+
+
+
 
 
 
@@ -209,8 +220,5 @@ Route::get('/personalcenter','Home\HomepageController@personalcenter');
 
 
 
-
-
-Route::resource('/admin','Admin\IndexController');
 
 

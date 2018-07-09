@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        // 加载后台首页模板
-        return view('Admin.index.index');
+        // 加载用户列表页
+        return view('Admin.user.index');
     }
 
     /**
@@ -27,7 +27,8 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        // 用户添加页面
+        return view('Admin.user.create');
     }
 
     /**
