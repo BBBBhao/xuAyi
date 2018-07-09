@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AbController extends Controller
+class ShufflingController extends Controller
 {
     /**
      * Display a listing of the resource.
