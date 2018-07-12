@@ -17,7 +17,7 @@
 	<body>
 
 		<div class="login-boxtitle">
-			<a href="home.html"><img alt="logo" src="/Home/images/logobig.png" /></a>
+			<a href="/"><img alt="logo" src="/Home/images/xuayi.png" /></a>
 		</div>
 
 		<div class="login-banner">
@@ -45,7 +45,7 @@
             <div class="login-links">
                 <label for="remember-me"><input id="remember-me" type="checkbox">记住密码</label>
 								<a href="#" class="am-fr">忘记密码</a>
-								<a href="register.html" class="zcnext am-fr am-btn-default">注册</a>
+								<a href="/register" class="zcnext am-fr am-btn-default">注册</a>
 								<br />
             </div>
 								<div class="am-cf">

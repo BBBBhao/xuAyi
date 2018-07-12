@@ -34,39 +34,6 @@
 
 <title>MWS Admin - Form Layouts</title>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
 
 <body>
@@ -86,20 +53,25 @@
             <!-- User Information and functions section -->
             <div id="mws-user-info" class="mws-inset">
             
+
                 <!-- 用户头像 -->
-                <div id="mws-user-photo">
+
+                <!-- <div id="mws-user-photo">
                     <img src="/Admin_/example/profile.jpg" alt="User Photo">
-                </div>
+                </div> -->
                 
+        
+
                 <!-- 用户信息 退出登陆-->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        后台用户名
+                        {{ session('user')['uname'] }}
                     </div>
                     <ul>      
-                        <li><a href="#">个人中心</a></li>
-                        <li><a href="#">修改密码</a></li>
-                        <li><a href="#">退出登录</a></li>
+                        <li><a href="/admin/info">修改个人信息</a></li>
+                        <li><a href="/admin/pass">修改密码</a></li>
+                        <li><a href="/admin/quit">退出登录</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -138,13 +110,12 @@
                         <a href="#"><i class="icon-users"></i>用户管理</a>
                         <ul>
                             <li><a href="/admin/user">用户列表</a></li>
-                            <li><a href="/admin/user/create">用户添加</a></li>
-                            <li><a href="form_elements.html">回收站</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
             <!-- 用户管理结束 -->
+
 
             <!-- 分类管理开始 -->
             <div id="mws-navigation">
@@ -158,23 +129,9 @@
                     </li>
                 </ul>
             </div>
-            <!-- 用户管理结束 -->
+            <!-- 分类管理结束 -->
 
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
              <!-- 轮播图管理开始 -->
             <div id="mws-navigation">
                 <ul>
@@ -224,6 +181,10 @@
 
 
         </div>
+    
+
+        
+
         <!-- Main Container Start -->
         <div id="mws-container" class="clearfix">
         
