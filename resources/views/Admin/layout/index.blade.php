@@ -34,6 +34,39 @@
 
 <title>MWS Admin - Form Layouts</title>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body>
@@ -126,8 +159,71 @@
                 </ul>
             </div>
             <!-- 用户管理结束 -->
-        </div>
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             <!-- 轮播图管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>轮播图管理</a>
+                        <ul>
+                            <li><a href="/shuffling">轮播图列表</a></li>
+                            <li><a href="/shuffling/create">轮播图添加</a></li>
+                            <li><a href="/shuffling/delete/delete">轮播图回收</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+       
+        <!-- 轮播图管理结束-->
+
+
+        <!-- 推荐位管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>推荐位管理</a>
+                        <ul>
+                            <li><a href="/recom">推荐位列表</a></li>
+                            <li><a href="/recom/create">推荐位添加</a></li>
+                            <li><a href="/recom/delete/delete">推荐位回收</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         
+        <!-- 推荐位管理结束-->
+
+
+        <!-- 网站配置管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>网站配置管理</a>
+                        <ul>
+                            <li><a href="/config">网站配置列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <!-- 网站配置管理结束-->
+
+
+        </div>
         <!-- Main Container Start -->
         <div id="mws-container" class="clearfix">
         

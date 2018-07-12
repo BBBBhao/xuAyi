@@ -62,7 +62,7 @@ class CatesController extends Controller
         }else{
             $parent_data = Cates::find($pid);
             $cates -> path = $parent_data -> path.','.$parent_data -> id;
-        }
+        } 
 
         $cates -> cname = $request ->  input('cname','');
         $cates -> pid = $request ->  input('pid','');

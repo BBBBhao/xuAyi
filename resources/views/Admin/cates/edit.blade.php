@@ -2,7 +2,7 @@
 
 @section('content')
 
-	@if (count($errors) > 0)
+@if (count($errors) > 0)
 	    <div class="mws-form-message error">
 	        <ul>
 	            @foreach ($errors->all() as $error)

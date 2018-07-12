@@ -211,9 +211,27 @@ Route::resource('/admin/cates','Admin\CatesController');
 
 
 
+// 前台首页路由
 Route::resource('/','Home\HomepageController');
-Route::get('/register','Home\HomepageController@register');
-Route::get('/personalcenter','Home\HomepageController@personalcenter');
+
+// 轮播图主页路由
+Route::resource('/shuffling','Admin\ShufflingController');
+// 轮播回收站页面
+Route::controller('/shuffling/delete','Admin\ShufflingController');
+
+// 推荐位路由
+Route::resource('/recom','Admin\RecomController');
+// 推荐位回收站页面
+Route::controller('/recom/delete','Admin\RecomController');
+// 推荐位彻底删除路由
+Route::get('/recom/cheshan/{id}','Admin\RecomController@cheshan');
+
+//网站配置路由
+Route::resource('/config','Admin\ConfigController');
+// 网站配置回收站页面
+Route::controller('/config/delete','Admin\ConfigController');
+
+
 
 
 
