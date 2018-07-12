@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Goods extends Model
 {
@@ -26,4 +27,12 @@ class Goods extends Model
     {
           return $this->belongsTo('App\Models\Cates','cid');
     }
+
+    // 商品表 与 推荐表 一对一关系  cid -> 商品表外键
+     public function GoodsRecom()
+    {
+        return $this->hasOne('App\Models\Recom','cid');
+    }
+
+
 }

@@ -1,34 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\home;
+namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Link;
 
-class HomepageController extends Controller
+class ShopcartController extends Controller
 {
     /**
-     * 商城首页
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $link = link::all();
-        return view('home.index',['link' => $link]);
+        //
+        return view('home.shopcart');
     }
 
     /**
-     * 商城登录
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -85,24 +84,5 @@ class HomepageController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    /**
-     *注册模块
-     *
-     */
-     public function register(Request $request)
-    {
-        return view('Home.register');
-    }
-
-    /**
-     *个人中心模块
-     *
-     */
-     public function personalcenter(Request $request)
-    {
-        return view('Home.personalcenter');
     }
 }

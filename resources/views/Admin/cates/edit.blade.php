@@ -3,7 +3,11 @@
 @section('content')
 
 
+
 @if (count($errors) > 0)
+
+	@if (count($errors) > 0)
+
 
 	@if (count($errors) > 0)
 

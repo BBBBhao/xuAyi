@@ -24,6 +24,7 @@
                 </tr>
             </table>
 		</div>
+
         <span><i class="icon-table"></i>用户列表</span>
     </div>
     <div class="mws-panel-body no-padding">
@@ -81,6 +82,7 @@
                     <li>{!! $res ->appends(['search'=> $search])->render() !!}</li>
                 </ul>   
             </div>
+
 
    	</div>
 </div>

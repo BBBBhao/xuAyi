@@ -14,33 +14,25 @@
 
 	<div class="mws-panel grid_8">
 		<div class="mws-panel-header">
-        	<span>添加分类</span>
+        	<span>暂时性订单添加</span>
         </div>
         <div class="mws-panel-body no-padding">
-            <form class="mws-form" action="/admin/cates" method="post">
-
-
-
-
+            <form class="mws-form" action="/admin/order" method="post">
                 {{ csrf_field() }}
                 <div class="mws-form-inline">
 	                <div class="mws-form-row">
-		                <label class="mws-form-label">分类名称</label>
+	                    <label class="mws-form-label">订单号</label>
 	                    	<div class="mws-form-item">
-	                    		<input type="text" class="small" name="cname" value="{{ old('cname') }}">
+	                    		<input type="text" class="small" name="guid" value="">
 	                    	</div>
-                    </div>
-                    			
-                    <div class="mws-form-row">
-	                    <label class="mws-form-label">所属分类</label>
-	                    <div class="mws-form-item">
-	                    	<select class="small" name="pid">
-	                    	<option value="0">--- 默认一级分类 ---</option>
-	                    	@foreach($cates as $k => $v)
-							<option value="{{ $v -> id }}">{{ $v -> cname}}</option>
-	                    	@endforeach
-	                    	</select>
-                   		</div>
+	                    <label class="mws-form-label">订单总额</label>
+	                    	<div class="mws-form-item">
+	                    		<input type="text" class="small" name="total" value="">
+	                    	</div>
+	                    <label class="mws-form-label">下单用户</label>
+	                    	<div class="mws-form-item">
+	                    		<input type="text" class="small" name="recipients" value="">
+	                    	</div>
                     </div>
 		     	</div>
                 <div class="mws-button-row">

@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 use App\Models\Users;
 use App\Models\UserDetails;
+
 
 class UserController extends Controller
 {
@@ -19,6 +21,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)
     {   
         // 搜索
@@ -28,6 +31,12 @@ class UserController extends Controller
         $search = Input::get('search');
         // 加载用户页
         return view('Admin.user.index',compact('res','search'));
+
+    public function index()
+    {
+        // 加载用户列表页
+        return view('Admin.user.index');
+
     }
 
     /**
@@ -37,7 +46,12 @@ class UserController extends Controller
      */
     public function create()
     {
+
         // return view('Admin.user.create');
+
+        // 用户添加页面
+        return view('Admin.user.create');
+
     }
 
     /**
@@ -70,6 +84,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+
         // 用户修改   
         $user = Users::find($id);
         // dd($user);
@@ -80,6 +95,9 @@ class UserController extends Controller
         $ud = $ud['status'];
         // dd($ud);
         return view('Admin.user.edit',compact('user','ud','id'));
+
+        //
+
     }
 
     /**
@@ -90,6 +108,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
+
     { 
         // 用户审查   
         $res = $request -> except('_token','_method');
@@ -102,6 +121,10 @@ class UserController extends Controller
         //用户是否会禁用
         UserDetails::where('uid','=',$id) -> update(['status'=> $res['status']]);
         return redirect('admin/user');
+
+    {
+        //
+
     }
 
     /**

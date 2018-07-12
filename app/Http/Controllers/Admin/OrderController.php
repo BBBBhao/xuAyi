@@ -1,34 +1,36 @@
 <?php
 
-namespace App\Http\Controllers\home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\OrderRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Link;
+use App\Models\Order;
 
-class HomepageController extends Controller
+class OrderController extends Controller
 {
     /**
-     * 商城首页
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $link = link::all();
-        return view('home.index',['link' => $link]);
+        $order = order::all();
+        return view("admin.order.index",["order" => $order]);
     }
 
     /**
-     * 商城登录
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        
+        //
+        return view("admin.order.create");
     }
 
     /**
@@ -40,6 +42,20 @@ class HomepageController extends Controller
     public function store(Request $request)
     {
         //
+
+        $num1 = 520131400;
+        $num2 = mt_rand(100000000,999999999);
+        $num = $num1.$num2;
+        $order = new order;
+        $order -> guid = $num;
+        $order -> total = $request -> input('total','');
+        $order -> uid = $request -> input('uid','');
+
+        if($order -> save()){
+            return redirect('/admin/order') -> with('success','添加成功');
+        }else{
+            return back() -> with('error','添加失败');
+        }
     }
 
     /**
@@ -85,24 +101,5 @@ class HomepageController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    /**
-     *注册模块
-     *
-     */
-     public function register(Request $request)
-    {
-        return view('Home.register');
-    }
-
-    /**
-     *个人中心模块
-     *
-     */
-     public function personalcenter(Request $request)
-    {
-        return view('Home.personalcenter');
     }
 }

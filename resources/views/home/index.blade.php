@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>首页</title>
+		<title>auntxu</title>
 
 		<link href="/Home/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link href="/Home/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
@@ -26,8 +26,13 @@
 				<ul class="message-l">
 					<div class="topMessage">
 						<div class="menu-hd">
+
 							贵宾请： <a href="/login" target="_top" class="h">登录</a>
 							<<a href="/register" target="_top">注册</a>
+
+							贵宾请： <a href="/create" target="_top" class="h">登录</a>
+							<a href="/register" target="_top">注册</a>
+
 						</div>
 					</div>
 				</ul>
@@ -39,7 +44,7 @@
 						<div class="menu-hd MyShangcheng"><a href="/personalcenterxuan" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 					</div>
 					<div class="topMessage mini-cart">
-						<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+						<div class="menu-hd"><a id="mc-menu-hd" href="/shopcart" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
 					</div>
 					<div class="topMessage favorite">
 						<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
@@ -2150,15 +2155,10 @@
    
 					<div class="footer ">
 						<div class="footer-hd ">
-							<p>
-								<a href="# ">恒望科技</a>
-								<b>|</b>
-								<a href="# ">商城首页</a>
-								<b>|</b>
-								<a href="# ">支付宝</a>
-								<b>|</b>
-								<a href="# ">物流</a>
-							</p>
+							<b>|</b>
+							@foreach ($link as $key => $value)
+							<a href="">{{ $value['name'] }}&nbsp;&nbsp;<b>|</b></a>
+							@endforeach
 						</div>
 						<div class="footer-bd ">
 							<p>
@@ -2177,7 +2177,7 @@
 		<div class="navCir">
 			<li class="active"><a href="Home.html"><i class="am-icon-home "></i>首页</a></li>
 			<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
-			<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
+			<li><a href="/shopcart"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
 			<li><a href="person/index.html"><i class="am-icon-user"></i>我的</a></li>					
 		</div>
 
@@ -2195,7 +2195,7 @@
 								<p class="avatar_imgbox "><img src="/Home/images/no-img_mid_.jpg " /></p>
 								<ul class="user_info ">
 									<li>用户名sl1903</li>
-									<li>级&nbsp;别普通会员</li>
+									<li>级别：普通会员</li>
 								</ul>
 							</div>
 							<div class="login_btnbox ">
@@ -2206,15 +2206,7 @@
 						</div>
 
 					</div>
-					<div id="shopCart " class="item ">
-						<a href="# ">
-							<span class="message "></span>
-						</a>
-						<p>
-							购物车
-						</p>
-						<p class="cart_num ">0</p>
-					</div>
+					
 					<div id="asset " class="item ">
 						<a href="# ">
 							<span class="view "></span>

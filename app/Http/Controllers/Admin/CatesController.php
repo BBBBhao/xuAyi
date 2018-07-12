@@ -15,7 +15,11 @@ class CatesController extends Controller
     public static function getCates()
     {
         //$cates = Cates::paginate();
+
         $cates = Cates::select('id','cname','pid','path','status',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+
+        $cates = Cates::select('id','cname','pid','path','status',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->paginate();
+
         foreach($cates as $k => $v){
             // 统计逗号出现的次数
             $n = substr_count($v -> path,',');
@@ -28,6 +32,7 @@ class CatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)  
     {
         $search = $request -> input('search','');
@@ -44,6 +49,12 @@ class CatesController extends Controller
             $cates[$k] -> cname = str_repeat('|---',$n).$cates[$k] -> cname;
         }
         return view('Admin.cates.index',['cates' => $cates]);
+
+    public function index()
+    {
+        
+        return view('Admin.cates.index',['cates' => self::getCates()]);
+
     }
 
     /**
@@ -74,7 +85,11 @@ class CatesController extends Controller
         }else{
             $parent_data = Cates::find($pid);
             $cates -> path = $parent_data -> path.','.$parent_data -> id;
+
         } 
+
+        }
+
 
         $cates -> cname = $request ->  input('cname','');
         $cates -> pid = $request ->  input('pid','');
@@ -152,6 +167,7 @@ class CatesController extends Controller
      */
     public function destroy($id)
     {
+
         $data = Cates::where('pid',$id) -> first();
         if(empty($data)){
             $res = Cates::destroy($id);
@@ -163,6 +179,9 @@ class CatesController extends Controller
         }else{
             return back() -> with('error','当前分类下有子分类，不允许删除');
         }
+
+
+        //
 
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
+
     // 指定Users表主键
     protected $primaryKey = 'uid';
     // 一对一关系
@@ -19,4 +20,7 @@ class Users extends Model
     //  * @var bool
     //  */
     // public $timestamps = false;
+
+    //
+
 }

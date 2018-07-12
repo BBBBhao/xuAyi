@@ -42,9 +42,9 @@
 
                                     <td style="width:20px; height:35px;" >{{ $v -> id }}</td>
 
-                                    <td style="width:100px; height:100px;">{{ $v -> goodrecommend ->gname }}</td>
+                                    <td style="width:100px; height:100px;">{{ $v -> goodrecommend -> gname}}</td>
 
-                                    <td style="width:100px; height:60px;">{{ $v -> goodrecommend -> pic}}</td>
+                                    <td style="width:100px; height:60px;">{{ $v -> goodrecommend -> pic }}</td>
 
                                     <td style="width:100px; height:100px;">{{ $v -> location }}</td>
 
