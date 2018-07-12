@@ -130,7 +130,7 @@ Route::post('admin/dologin','Admin\LoginController@dologin');
 // 后台用户注册
 Route::resource('/admin/register','Admin\LoginController');
 
-Route::group(['middleware'=>'admin.login'], function(){
+//Route::group(['middleware'=>'admin.login'], function(){
 
 // 后台首页路由
 Route::get('/admin','Admin\IndexController@index');
@@ -147,7 +147,7 @@ Route::post('/admin/dopass','Admin\IndexController@dopass');
 //退出登录
 Route::get('/admin/quit','Admin\IndexController@quit');
 
-});
+//});
 
 
 

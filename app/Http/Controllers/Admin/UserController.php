@@ -31,12 +31,6 @@ class UserController extends Controller
         $search = Input::get('search');
         // 加载用户页
         return view('Admin.user.index',compact('res','search'));
-
-    public function index()
-    {
-        // 加载用户列表页
-        return view('Admin.user.index');
-
     }
 
     /**
@@ -122,19 +116,6 @@ class UserController extends Controller
         UserDetails::where('uid','=',$id) -> update(['status'=> $res['status']]);
         return redirect('admin/user');
 
-    {
-        //
-
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
         //
-    }
 }

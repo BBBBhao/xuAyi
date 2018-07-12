@@ -13,6 +13,6 @@ class Cates extends Model
     	return $this->hasMany('App\Models\Goods','cid');
     }
 
-    //
+    
 
 }

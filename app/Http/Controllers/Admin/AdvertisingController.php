@@ -20,11 +20,7 @@ class AdvertisingController extends Controller
          return view("Admin.advertising.index",compact('advertising','Name'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         //
