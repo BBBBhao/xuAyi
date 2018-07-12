@@ -6,13 +6,6 @@
             <span><i class="icon-table"></i> 分类列表</span>
         </div>
         <div class="mws-panel-body no-padding">
-
-            <form class="form-inline pull-right" action="/admin/cates" method="get">
-                <div class="form-group" style="background:#ddd"> 
-                    <input type="text" name="search" class="form-control" id="search" placeholder="分类名 | 分类ID | 父级ID">
-                    <button type="submit" class="btn btn-success">搜索</button>
-                </div> 
-            </form>
             <table class="mws-table table-hover">
                 <thead>
                     <tr>
