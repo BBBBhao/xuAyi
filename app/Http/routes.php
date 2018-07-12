@@ -129,15 +129,6 @@ Route::get('/admin/quit','Admin\IndexController@quit');
 
 
 
-// 前台用户注册
-Route::resource('/register/user','Home\UserController');
-// 前台用户登录
-Route::resource('/login','Home\LoginController');
-
-
-
-
-
 
 
 
