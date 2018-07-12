@@ -11,11 +11,7 @@ use App\Models\Advertising;
 
 class AdvertisingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index(Request $req)
     {
         //
