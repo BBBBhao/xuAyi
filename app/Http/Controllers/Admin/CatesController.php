@@ -15,7 +15,7 @@ class CatesController extends Controller
     public static function getCates()
     {
         //$cates = Cates::paginate();
-        $cates = Cates::select('id','cname','pid','path','status',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->paginate();
+        $cates = Cates::select('id','cname','pid','path','status',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
         foreach($cates as $k => $v){
             // 统计逗号出现的次数
             $n = substr_count($v -> path,',');
@@ -28,10 +28,22 @@ class CatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)  
     {
-        
-        return view('Admin.cates.index',['cates' => self::getCates()]);
+        $search = $request -> input('search','');
+		$cates = Cates::where('cname','like','%'.$search.'%')
+                        ->orWhere('id','like','%'.$search.'%')
+                        ->orWhere('pid','like','%'.$search.'%')
+                        ->select('id','cname','pid','path','status',DB::raw("concat(path,',',id) as paths"))
+                        ->orderBy('paths','asc')
+                        ->paginate(5)
+                        ->appends($request->input());
+        foreach($cates as $k => $v){
+            // 统计逗号出现的次数
+            $n = substr_count($v -> path,',');
+            $cates[$k] -> cname = str_repeat('|---',$n).$cates[$k] -> cname;
+        }
+        return view('Admin.cates.index',['cates' => $cates]);
     }
 
     /**
@@ -140,6 +152,17 @@ class CatesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Cates::where('pid',$id) -> first();
+        if(empty($data)){
+            $res = Cates::destroy($id);
+            if($res){
+                return redirect('/admin/cates') -> with('success','删除成功');
+            }else{
+                return back() -> with('error','删除失败');
+            }
+        }else{
+            return back() -> with('error','当前分类下有子分类，不允许删除');
+        }
+
     }
 }

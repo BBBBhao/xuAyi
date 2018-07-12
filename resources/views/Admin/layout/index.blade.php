@@ -8,7 +8,7 @@
 
 <!-- Viewport Metatag -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Plugin Stylesheets first to ease overrides -->
 <link rel="stylesheet" type="text/css" href="/Admin_/plugins/colorpicker/colorpicker.css" media="screen">
 
@@ -34,38 +34,7 @@
 
 <title>MWS Admin - Form Layouts</title>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</style> 
 
 </head>
 
@@ -91,17 +60,17 @@
                     <img src="/Admin_/example/profile.jpg" alt="User Photo">
                 </div>
                 
-                <!-- 用户信息 退出登陆-->
-                <div id="mws-user-functions">
-                    <div id="mws-username">
-                        后台用户名
-                    </div>
-                    <ul>      
-                        <li><a href="#">个人中心</a></li>
-                        <li><a href="#">修改密码</a></li>
-                        <li><a href="#">退出登录</a></li>
-                    </ul>
-                </div>
+   
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -123,28 +92,26 @@
                 <span></span>
                 <span></span>
             </div>
+           
             
-            <!-- Searchbox -->
-            <div id="mws-searchbox" class="mws-inset">
-                <form action="typography.html">
-                    <input type="text" class="mws-search-input" placeholder="Search...">
-                    <button type="submit" class="mws-search-submit"><i class="icon-search"></i></button>
-                </form>
-            </div>
-            <!-- 用户管理开始 -->
-            <div id="mws-navigation">
-                <ul>
-                    <li class="active">
-                        <a href="#"><i class="icon-users"></i>用户管理</a>
-                        <ul>
-                            <li><a href="/admin/user">用户列表</a></li>
-                            <li><a href="/admin/user/create">用户添加</a></li>
-                            <li><a href="form_elements.html">回收站</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- 用户管理结束 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
             <!-- 分类管理开始 -->
             <div id="mws-navigation">
@@ -158,21 +125,7 @@
                     </li>
                 </ul>
             </div>
-            <!-- 用户管理结束 -->
-
-           
-
-
-
-
-
-
-
-
-
-
-
-
+            <!-- 分类管理结束 -->
 
 
              <!-- 轮播图管理开始 -->
@@ -201,10 +154,26 @@
                             <li><a href="/recom">推荐位列表</a></li>
                             <li><a href="/recom/create">推荐位添加</a></li>
                             <li><a href="/recom/delete/delete">推荐位回收</a></li>
+
+            <!-- 商品管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>分类管理</a>
+                        <ul>
+                            <li><a href="/admin/goods">商品列表</a></li>
+                            <li><a href="/admin/goods/create">商品添加</a></li>
+                            <li><a href="/admin/goods/del/show">商品回收站</a></li>
+
                         </ul>
                     </li>
                 </ul>
             </div>
+
+
+            <!-- 用户管理结束 -->
+        </div>
+
         
         <!-- 推荐位管理结束-->
 
@@ -226,6 +195,7 @@
         </div>
         <!-- Main Container Start -->
         <div id="mws-container" class="clearfix">
+
         
             @if (session('success'))
                 <div class="mws-form-message success">
