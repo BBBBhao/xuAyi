@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Link;
 
 class HomepageController extends Controller
 {
@@ -16,7 +17,8 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $link = link::all();
+        return view('home.index',['link' => $link]);
     }
 
     /**

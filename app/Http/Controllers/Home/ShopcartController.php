@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class ShopcartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        // 加载后台首页模板
-        return view('Admin.index.index');
+        //
+        return view('home.shopcart');
     }
 
     /**

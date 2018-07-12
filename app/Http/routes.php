@@ -11,6 +11,14 @@
 |
 */
 
+// 后台首页路由
+Route::get('/admin','Admin\IndexController@index');
+
+// 后台用户管理路由
+Route::resource('/admin/user','Admin\UserController');
+
+// 后台分类管理路由
+Route::resource('/admin/cates','Admin\CatesController');
 
 
 
@@ -211,6 +219,90 @@ Route::get('/personalcenter','Home\HomepageController@personalcenter');
 
 
 
-Route::resource('/admin','Admin\IndexController');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 后台友情链接
+Route::resource('/admin/link','Admin\LinkController');
+// 后台订单管理
+Route::resource('/admin/order','Admin\OrderController');
+// 后台广告管理
+Route::resource('/admin/advertising','Admin\AdvertisingController');
+//前台购物车
+Route::get('/shopcart','Home\ShopcartController@index');
