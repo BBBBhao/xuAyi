@@ -27,12 +27,7 @@ class AdvertisingController extends Controller
         return view('admin.advertising.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(AdvertisingRequest $request)
     {
         //
