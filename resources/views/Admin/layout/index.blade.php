@@ -55,10 +55,10 @@
             <!-- User Information and functions section -->
             <div id="mws-user-info" class="mws-inset">
             
-                <!-- 用户头像 -->
-                <!-- <div id="mws-user-photo">
-                </div> -->
                 
+                
+
+
                 <!-- 用户信息 退出登陆-->
                 <div id="mws-user-functions">
                     <div id="mws-username">
@@ -112,19 +112,10 @@
             </div>
             <!-- 用户管理结束 -->
 
-            <!-- 分类管理开始 -->
-            <div id="mws-navigation">
-                <ul>
-                    <li class="active">
-                        <a href="#"><i class="icon-list"></i>分类管理</a>
-                        <ul>
-                            <li><a href="/admin/cates">分类列表</a></li>
-                            <li><a href="/admin/cates/create">分类添加</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- 用户管理结束 -->
+
+
+
+
         </div>
         
         <!-- Main Container Start -->

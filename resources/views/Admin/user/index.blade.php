@@ -1,28 +1,6 @@
 @extends('admin.layout.index')
 
 @section('content')
-<style type="text/css">
-    ul li{
-        list-style-type: none;
-    }
-    div.center {
-        text-align: center;
-    }
-    ul.pagination {
-        display: inline-block;
-        padding: 0;
-        margin: 0;
-    }
-   
-    ul.pagination li {
-        color: black;
-        float: left;
-        padding: 3px 10px;
-        border-radius: 0px;
-        border:0px solid #ccc;
-        font-size: 25px;
-    }
-</style>
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
         <span><i class="icon-table"></i>用户列表</span>
