@@ -17,8 +17,8 @@ class ConfigController extends Controller
     {
         // 轮播图数据获取
 
-        $config = Config::where('name','like','%'.$req['name'].'%')->paginate(3);
-        $Name = $req -> input('name');
+            $config = Config::where('name','like','%'.$req['name'].'%')->paginate(3);
+            $Name = $req -> input('name');
         return view('Admin.config.index',compact('config','Name'));
 
     }
@@ -27,7 +27,7 @@ class ConfigController extends Controller
     public function edit($id)
     {
 
-        // dump ($id);
+        
         $config = new Config;
         $config = Config::find($id);
 
