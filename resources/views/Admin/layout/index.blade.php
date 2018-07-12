@@ -8,7 +8,7 @@
 
 <!-- Viewport Metatag -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Plugin Stylesheets first to ease overrides -->
 <link rel="stylesheet" type="text/css" href="/Admin_/plugins/colorpicker/colorpicker.css" media="screen">
 
@@ -34,6 +34,39 @@
 
 <title>MWS Admin - Form Layouts</title>
 
+
+<style type="text/css">
+    ul li{
+        list-style-type: none;
+    }
+    div.center {
+        text-align: center;
+    }
+    ul.pagination {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+   
+    ul.pagination li {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        border-radius: 5px;
+        border:1px solid #ccc;
+        font-size: 15px;
+    }
+   
+    ul.pagination li a{    
+        font-size: 15px;
+    }
+   
+    ul.pagination li a {
+        transition: background-color .3s;
+    }
+   
+    ul.pagination li:hover:not(.active) {background-color: darkgray;}
+</style> 
 </head>
 
 <body>
@@ -126,10 +159,86 @@
                 </ul>
             </div>
             <!-- 用户管理结束 -->
+
+            <!-- 商品管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>分类管理</a>
+                        <ul>
+                            <li><a href="/admin/goods">商品列表</a></li>
+                            <li><a href="/admin/goods/create">商品添加</a></li>
+                            <li><a href="/admin/goods/del/show">商品回收站</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 用户管理结束 -->
         </div>
         
         <!-- Main Container Start -->
         <div id="mws-container" class="clearfix">
+<div id="mws-themer">
+        <div id="mws-themer-content" style="right: 256px;">
+            <div id="mws-themer-ribbon"></div>
+            <div id="mws-themer-toggle" class="opened">
+                <i class="icon-bended-arrow-left"></i> 
+                <i class="icon-bended-arrow-right"></i>
+            </div>
+            <div id="mws-theme-presets-container" class="mws-themer-section">
+                <label for="mws-theme-presets">Color Presets</label>
+            <select id="mws-theme-presets"><option value="0">Default</option><option value="1">Army</option><option value="2">Rocky Mountains</option><option value="3">Chinese Temple</option><option value="4">Boutique</option><option value="5">Toxic</option><option value="6">Aquamarine</option></select></div>
+            <div class="mws-themer-separator"></div>
+            <div id="mws-theme-pattern-container" class="mws-themer-section">
+                <label for="mws-theme-patterns">Background</label>
+            <select id="mws-theme-patterns"><option value="0">Paper</option><option value="1">Blueprint</option><option value="2">Bricks</option><option value="3">Carbon</option><option value="4">Circuit</option><option value="5">Holes</option><option value="6">Mozaic</option><option value="7">Roof</option><option value="8">Stripes</option><option value="9">Arches</option><option value="10">Bright Squares</option><option value="11">Brushed Alu</option><option value="12">Circles</option><option value="13">Climpek</option><option value="14">Connect</option><option value="15">Corrugation</option><option value="16">Cubes</option><option value="17">Diagonal Noise</option><option value="18">Diagonal Striped Brick</option><option value="19">Diamonds</option><option value="20">Diamond Upholstery</option><option value="21">Escheresque</option><option value="22">Fabric Plaid</option><option value="23">Furley</option><option value="24">Gplaypattern</option><option value="25">Gradient Squares</option><option value="26">Grey</option><option value="27">Grilled</option><option value="28">Hexellence</option><option value="29">Lghtmesh</option><option value="30">Light Alu</option><option value="31">Light Checkered Tiles</option><option value="32">Light Honeycomb</option><option value="33">Littleknobs</option><option value="34">Nistri</option><option value="35">Noise Lines</option><option value="36">Noise Pattern</option><option value="37">Noisy Grid</option><option value="38">Norwegian Rose</option><option value="39">Pineapplecut</option><option value="40">Pinstripe</option><option value="41">Project Papper</option><option value="42">Ravenna</option><option value="43">Reticular Tissue</option><option value="44">Rockywall</option><option value="45">Roughcloth</option><option value="46">Shattered</option><option value="47">Silver Scales</option><option value="48">Skelatal Weave</option><option value="49">Small Crackle Bright</option><option value="50">Small Tiles</option><option value="51">Square</option><option value="52">Struckaxiom</option><option value="53">Subtle Stripes</option><option value="54">Vichy</option><option value="55">Washi</option><option value="56">Wavecut</option><option value="57">Weave</option><option value="58">Whitey</option><option value="59">White Brick Wall</option><option value="60">White Tiles</option><option value="61">Worn Dots</option></select></div>
+            <div class="mws-themer-separator"></div>
+            <div class="mws-themer-section">
+                <ul>
+                    <li class="clearfix"><span>Base Color</span> <div id="mws-base-cp" class="mws-cp-trigger"></div></li>
+                    <li class="clearfix"><span>Highlight Color</span> <div id="mws-highlight-cp" class="mws-cp-trigger"></div></li>
+                    <li class="clearfix"><span>Text Color</span> <div id="mws-text-cp" class="mws-cp-trigger"></div></li>
+                    <li class="clearfix"><span>Text Glow Color</span> <div id="mws-textglow-cp" class="mws-cp-trigger"></div></li>
+                    <li class="clearfix"><span>Text Glow Opacity</span> <div id="mws-textglow-op" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a><span class="ui-slider-handle-tooltip ui-state-default" style="display: none; margin-left: -13px; left: 50%;">50</span></div></li>
+                </ul>
+            </div>
+            <div class="mws-themer-separator"></div>
+            <div class="mws-themer-section">
+                <button class="btn btn-danger small" id="mws-themer-getcss">Get CSS</button>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         
             @if (session('success'))
                 <div class="mws-form-message success">

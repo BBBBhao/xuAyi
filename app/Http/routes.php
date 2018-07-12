@@ -11,9 +11,6 @@
 |
 */
 
-
-
-
 // 后台首页路由
 Route::get('/admin','Admin\IndexController@index');
 
@@ -22,6 +19,19 @@ Route::resource('/admin/user','Admin\UserController');
 
 // 后台分类管理路由
 Route::resource('/admin/cates','Admin\CatesController');
+
+// 后台商品管理
+Route::resource('/admin/goods','Admin\GoodsController');
+
+// 后台商品管理列表删除
+Route::controller('/admin/goods/del','Admin\GoodsController');
+
+// 后台商品详情
+Route::resource('/admin/goodsdetails','Admin\GoodsDetailsController');
+
+// 后台商品图片表
+Route::resource('/admin/goodsimages','Admin\GoodsImagesController');
+
 
 
 
