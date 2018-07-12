@@ -12,11 +12,7 @@ use App\Models\Config;
 
 class ConfigController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index(Request $req)
     {
         // 轮播图数据获取

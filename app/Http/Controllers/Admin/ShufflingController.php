@@ -12,11 +12,7 @@ use App\Models\Lunbo;
 
 class ShufflingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // 主页
     public function index(Request $req)
     {
         // 轮播图数据获取
