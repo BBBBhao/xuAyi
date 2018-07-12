@@ -33,11 +33,7 @@
 <link rel="stylesheet" type="text/css" href="/Admin_/css/themer.css" media="screen">
 
 <title>MWS Admin - Form Layouts</title>
-<style type="text/css">
-</style>
-
 </head>
-
 <body>
     <!-- 头部开始 -->
     <div id="mws-header" class="clearfix">
