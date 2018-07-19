@@ -22,8 +22,10 @@ class IndexController extends Controller
      */
     public function index()
     {
+        $user = UserDetails::where('uid',session('user')['uid'])->first();
+        // dd($user -> nickname);
         // 加载后台首页模板
-        return view('Admin.index.index');
+        return view('Admin.index.index',['user' => $user]);
     }
 
     /**
@@ -99,10 +101,11 @@ class IndexController extends Controller
      */
     public function info()
     {
+        $user = UserDetails::where('uid',session('user')['uid'])->first();
         // 获取信息
         $face = UserDetails::where('uid',session('user')['uid'])->first();
-        // dd($face);
-        return view('admin.user.info',['face' => $face ]);
+        // dd(session('user')['uname']);
+        return view('admin.user.info',['face' => $face,'user' => $user ]);
     }
     /**
      * 修改信息
@@ -114,7 +117,7 @@ class IndexController extends Controller
     { 
         // 判断用户输入
         $res = $request -> except('_token','face');
-        // dd($res);
+        // dd($res['nickname']);
         $rule = [
             'tel' => 'required|regex:/^1[34578][0-9]{9}$/',
             'email' => 'required|email',
@@ -147,6 +150,7 @@ class IndexController extends Controller
             $file -> move('./uploads/',$name);
             $face = UserDetails::find(session('user')['uid']);
             $face -> tel = $res['tel'];
+            $face -> nickname = $res['nickname'];
             $face -> email = $res['email'];
             $face -> addr = $res['addr'];
             $face -> face = $name;
@@ -158,6 +162,7 @@ class IndexController extends Controller
 
         }else{
             $face = UserDetails::find(session('user')['uid']);
+            $face -> nickname = $res['nickname'];
             $face -> tel = $res['tel'];
             $face -> email = $res['email'];
             $face -> addr = $res['addr'];
@@ -176,7 +181,8 @@ class IndexController extends Controller
      */
     public function pass()
     {
-        return view('admin.user.repwd');
+        $user = UserDetails::where('uid',session('user')['uid'])->first();
+        return view('admin.user.repwd',[ 'user' => $user ]);
     }
     /**
      * 修改密码

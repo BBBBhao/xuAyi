@@ -2,7 +2,7 @@
 
 @section('content')
 
-	@if (count($errors) > 0)
+	@if(count($errors) > 0)
 	    <div class="mws-form-message error">
 	        <ul>
 	            @foreach ($errors->all() as $error)
@@ -41,7 +41,7 @@
                     </div>
 		     	</div>
                 <div class="mws-button-row">
-                    <input type="submit" value="修改" class="btn btn-success">
+                    <input type="submit" value="修改" class="btn btn-inverse btn-small">
                 </div>
             </form>
         </div>    	

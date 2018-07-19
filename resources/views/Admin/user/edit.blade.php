@@ -35,12 +35,12 @@
                               </div>
                          </div>
                          <div class="mws-form-row">
-                         @if($user ==1 || $user ==2)
+                         @if($users ==1 || $users ==2)
                               <label class="mws-form-label">身份</label>
                               <div class="mws-form-item">
                                 <select class="form-control" name="indentity">
-                                  <option @if($user == 1) selected @endif value="1">管理员</option>
-                                  <option @if($user == 2) selected @endif value="2">普通用户</option>
+                                  <option @if($users == 1) selected @endif value="1">管理员</option>
+                                  <option @if($users == 2) selected @endif value="2">普通用户</option>
                                 </select>
                               </div>
                           @endif

@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 use App\Models\Users;
 use App\Models\UserDetails;
+
 
 class UserController extends Controller
 {
@@ -19,15 +21,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)
-    {   
+    {
+        $user = UserDetails::where('uid',session('user')['uid'])->first();   
         // 搜索
         $res = Users::leftjoin('userdetails','users.uid','=','userdetails.uid');
         $res = $res -> where('uname','like','%'.Input::get('search').'%') -> paginate(2);
         // 条件
         $search = Input::get('search');
         // 加载用户页
-        return view('Admin.user.index',compact('res','search'));
+        return view('Admin.user.index',compact('res','search','user'));
     }
 
     /**
@@ -37,7 +41,12 @@ class UserController extends Controller
      */
     public function create()
     {
+
         // return view('Admin.user.create');
+
+        // 用户添加页面
+        return view('Admin.user.create');
+
     }
 
     /**
@@ -70,16 +79,21 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+
+        $user = UserDetails::where('uid',session('user')['uid'])->first();
         // 用户修改   
-        $user = Users::find($id);
+        $users = Users::find($id);
         // dd($user);
-        $user = $user['identity'];
+        $users = $users['identity'];
         // dd($user);
         $ud = UserDetails::where('uid','=',$id)->first();
         // dd($ud);
         $ud = $ud['status'];
         // dd($ud);
-        return view('Admin.user.edit',compact('user','ud','id'));
+        return view('Admin.user.edit',compact('user','ud','id','users'));
+
+        //
+
     }
 
     /**
@@ -90,6 +104,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
+
     { 
         // 用户审查   
         $res = $request -> except('_token','_method');
@@ -102,16 +117,7 @@ class UserController extends Controller
         //用户是否会禁用
         UserDetails::where('uid','=',$id) -> update(['status'=> $res['status']]);
         return redirect('admin/user');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
+        //
 }

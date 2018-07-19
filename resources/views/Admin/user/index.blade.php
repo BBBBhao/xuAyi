@@ -30,7 +30,7 @@
                 @foreach($res as $k => $v)
                     <tr>
                         <td>{{ $v -> uid }}</td>
-                        <td><img src="/uploads/{{ $v -> userdetails -> face }}" onerror="this.src='/uploads/27.jpg';" width="50" height="50"></td>
+                        <td><img src="/uploads/{{ $v -> userdetails -> face }}" onerror="this.src='/uploads/userspic.jpg';" width="50" height="50"></td>
                         <td>{{ $v -> uname }}</td>
                         <td>{{ $v -> userdetails -> tel }}</td>
                         <td>{{ $v -> userdetails -> addr }}</td>
@@ -60,6 +60,8 @@
                     <li>{!! $res ->appends(['search'=> $search])->render() !!}</li>
                 </ul>   
             </div>
+
+
    	</div>
 </div>
 @endsection

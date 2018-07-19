@@ -21,6 +21,24 @@
                     {{ csrf_field() }}
                     <div class="mws-form-inline">
                          <div class="mws-form-row">
+                              <label class="mws-form-label">登录名</label>
+                              <div class="mws-form-item">
+                                   <input type="text" class="small" readonly value="{{ session('user')['uname'] }}     (登陆账号 | 不可修改)">
+                              </div>
+                         </div>
+                         <div class="mws-form-row">
+                              <label class="mws-form-label">用户名</label>
+                              <div class="mws-form-item">
+                                   <input type="text" class="small" readonly value="{{ $face -> username }}     (用户名 | 不可修改)">
+                              </div>
+                         </div>
+                         <div class="mws-form-row">
+                              <label class="mws-form-label">昵称</label>
+                              <div class="mws-form-item">
+                                   <input type="text" class="small" name="nickname" placeholder="您的昵称" required value="{{ $face -> nickname }}">
+                              </div>
+                         </div>
+                         <div class="mws-form-row">
                               <label class="mws-form-label">电话</label>
                               <div class="mws-form-item">
                                    <input type="text" class="small" name="tel" placeholder="您的手机号码" required value="{{ $face -> tel }}">
@@ -42,7 +60,7 @@
                               <label class="mws-form-label">头像</label>
                               <div class="mws-form-item">
                                     <input type="file" name="face" value="">
-                                    <img src="/uploads/{{ $face -> face }}" width="60px" height="60px" onerror="this.src='/uploads/27.jpg';"> 
+                                    <img src="/uploads/{{ $face -> face }}" width="60px" height="60px" onerror="this.src='/uploads/userspic.jpg';"> 
                               </div>
                          </div>
                     </div>

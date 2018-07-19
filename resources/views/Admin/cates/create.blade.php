@@ -40,8 +40,8 @@
                     </div>
 		     	</div>
                 <div class="mws-button-row">
-                    <input type="submit" value="添加" class="btn btn-success">
-                    <input type="reset" value="重置" class="btn btn-info">
+                    <input type="submit" value="添加" class="btn btn-inverse btn-small">
+                    <input type="reset" value="重置" class="btn btn-inverse btn-small">
                 </div>
             </form>
         </div>    	

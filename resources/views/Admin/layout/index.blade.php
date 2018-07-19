@@ -9,6 +9,8 @@
 <!-- Viewport Metatag -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+<link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
 <!-- Plugin Stylesheets first to ease overrides -->
 <link rel="stylesheet" type="text/css" href="/Admin_/plugins/colorpicker/colorpicker.css" media="screen">
 
@@ -50,27 +52,27 @@
         <div id="mws-user-tools" class="clearfix">
             <!-- User Information and functions section -->
             <div id="mws-user-info" class="mws-inset">
-            
-                
-                
-
-
+                <!-- User Photo -->
+                <div id="mws-user-photo">
+                    <img src="/uploads/{{ $user -> face }}" alt="User Photo" onerror="this.src='/uploads/userspic.jpg';">
+                </div>
                 <!-- 用户信息 退出登陆-->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        {{ session('user')['uname'] }}
+                        {{ $user -> nickname }}
                     </div>
                     <ul>      
                         <li><a href="/admin/info">修改个人信息</a></li>
                         <li><a href="/admin/pass">修改密码</a></li>
                         <li><a href="/admin/quit">退出登录</a></li>
+
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <!-- 头部结束 -->
-
+<!-- ============================================================================================111111========================= -->
     <!-- Start Main Wrapper -->
     <div id="mws-wrapper">
     
@@ -78,7 +80,7 @@
         <div id="mws-sidebar-stitch"></div>
         <div id="mws-sidebar-bg"></div>
         
-        <!-- 侧边栏开始 -->
+        <!-- 侧边栏开始 ====================================     ==================================?????????-->
         <div id="mws-sidebar">
         
             <!-- Hidden Nav Collapse Button -->
@@ -87,7 +89,6 @@
                 <span></span>
                 <span></span>
             </div>
-            
             <!-- Searchbox -->
             <div id="mws-searchbox" class="mws-inset">
                 <form action="typography.html">
@@ -102,20 +103,130 @@
                         <a href="#"><i class="icon-users"></i>用户管理</a>
                         <ul>
                             <li><a href="/admin/user">用户列表</a></li>
+
                         </ul>
                     </li>
                 </ul>
             </div>
             <!-- 用户管理结束 -->
+            <!-- 分类管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>分类管理</a>
+                        <ul>
+                            <li><a href="/admin/cates">分类列表</a></li>
+                            <li><a href="/admin/cates/create">分类添加</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 分类管理结束 -->
+            <!-- 友情链接开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>友情链接管理</a>
+                        <ul>
+                            <li><a href="/admin/link">友情链接</a></li>
+                            <li><a href="/admin/link/create">友情链接添加</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 分类管理结束 -->
+            <!-- 轮播图管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>轮播图管理</a>
+                        <ul>
+                            <li><a href="/shuffling">轮播图列表</a></li>
+                            <li><a href="/shuffling/create">轮播图添加</a></li>
+                            <li><a href="/shuffling/delete/delete">轮播图回收</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 友情链接结束 -->
+            <!-- 订单开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>订单管理</a>
+                        <ul>
+                            <li><a href="/admin/order">订单列表</a></li>
+                            <li><a href="/admin/order/create">暂时性订单添加</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <!-- 轮播图管理结束-->
+        <!-- 推荐位管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>推荐位管理</a>
+                        <ul>
+                            <li><a href="/recom">推荐位列表</a></li>
+                            <li><a href="/recom/create">推荐位添加</a></li>
+                            <li><a href="/recom/delete/delete">推荐位回收</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 商品管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>分类管理</a>
+                        <ul>
+                            <li><a href="/admin/goods">商品列表</a></li>
+                            <li><a href="/admin/goods/create">商品添加</a></li>
+                            <li><a href="/admin/goods/del/show">商品回收站</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 订单结束 -->
+            <!-- 广告开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>广告管理</a>
+                        <ul>
+                            <li><a href="/admin/advertising">广告列表</a></li>
+                            <li><a href="/admin/advertising/create">广告添加</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>   
+        <!-- 推荐位管理结束-->
+        <!-- 网站配置管理开始 -->
+            <div id="mws-navigation">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>网站配置管理</a>
+                        <ul>
+                            <li><a href="/config">网站配置列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <!-- 网站配置管理结束-->
 
+            <div id="mws-container" class="clearfix">
 
-
-
-
-        </div>
+            <!-- 广告结束 -->
+            </div>
+        </div>  
+<!-- =============================================             =========?????????====  ================================================== -->
+        <!-- Main Container Start -->
+     
         
         <!-- Main Container Start -->
         <div id="mws-container" class="clearfix">
+
         
             @if (session('success'))
                 <div class="mws-form-message success">
@@ -144,7 +255,7 @@
         <!-- Main Container End -->
         
     </div>
-
+<!-- ===================================================================================11111111111111111111================================= -->
     <!-- JavaScript Plugins -->
     <script src="/Admin_/js/libs/jquery-1.8.3.min.js"></script>
     <script src="/Admin_/js/libs/jquery.mousewheel.min.js"></script>
